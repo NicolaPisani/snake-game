@@ -1,0 +1,84 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+*{
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+    background: linear-gradient(to bottom, #154223, #000000);
+}
+
+.game-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  background-color: #000000;
+  border: 2px solid #668500;
+  outline: none;
+  animation: shake 0.5s ease-in-out;
+  animation-delay: 0.2s; /* Delay per far iniziare l'animazione dopo 0.2 secondi */
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0); /* Nessuna trasformazione all'inizio */
+  }
+  25% {
+    transform: translateX(-10px); /* Trasformazione desiderata durante l'animazione */
+  }
+  50% {
+    transform: translateX(10px); /* Trasformazione desiderata durante l'animazione */
+  }
+  75% {
+    transform: translateX(-10px); /* Trasformazione desiderata durante l'animazione */
+  }
+  100% {
+    transform: translateX(0); /* Nessuna trasformazione alla fine */
+  }
+}
+
+/* Stile per il serpente fermo durante l'animazione */
+.paused {
+  animation-play-state: paused;
+}
+
+.snake-dot {
+  width: 2%;
+  padding-bottom: 2%;
+  background-color: #00cc00;
+  border: 1px solid #00ff00;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.food-dot {
+  width: 2%;
+  padding-bottom: 2%;
+  background-color: #cc0000;
+  border: 1px solid #ff0000;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family:'Rubik Pixels',cursive;  /* Sostituisci "Pixel Font" con il nome del tuo font pixelato */
+  font-size: 48px; /* Regola la dimensione del testo a tuo piacimento */
+  color: yellow; /* Cambia il colore del testo a tuo piacimento */
+  text-shadow: 2px 2px 4px rgb(255, 0, 0); /* Aggiungi un'ombra al testo */
+}
