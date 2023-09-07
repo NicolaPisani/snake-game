@@ -14,7 +14,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-    background: linear-gradient(to bottom, #154223, #000000);
+    background: linear-gradient(to top, #1b552d, #131111);
 }
 
 .game-container {
@@ -52,8 +52,9 @@ body {
   animation-play-state: paused;
 }
 
-.snake-dot {
+.snake-dot { 
   width: 2%;
+  background-size: cover;
   padding-bottom: 2%;
   background-color: #00cc00;
   border: 1px solid #00ff00;
@@ -78,7 +79,38 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family:'Rubik Pixels',cursive;  /* Sostituisci "Pixel Font" con il nome del tuo font pixelato */
-  font-size: 48px; /* Regola la dimensione del testo a tuo piacimento */
-  color: yellow; /* Cambia il colore del testo a tuo piacimento */
-  text-shadow: 2px 2px 4px rgb(255, 0, 0); /* Aggiungi un'ombra al testo */
+  font-size: 48px; /* Regola la dimensione del testo a tuo piaciment o */
+  color: yellow; /* Cambia il colore del testo a tuo piacimento */ 
 }
+
+.instructions-container {
+  position: absolute;
+  max-width: 300px;
+  left: 40px; /* Sposta il box delle istruzioni a sinistra */
+  background-color: rgba(0, 0, 0, 0.5); /* Sfondo traslucido */
+  padding: 10px;
+  border: 2px solid #668500;
+  color: rgb(255, 230, 0);
+  font-family: 'Rubik Pixels', cursive;
+  font-size: 24px;
+  z-index: 1; /* Assicurati che il box delle istruzioni sia sopra il gioco */
+}
+
+.snake-emoji {
+  font-size: 6rem; /* Imposta la dimensione dell'emoji a tuo piacimento */
+  animation: bounce 8s ease infinite;
+ position: absolute;
+ right: 10%;
+ top: 38%;
+
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(280px);
+  }
+  50% {
+    transform: translateY(-300px); /* Altezza del rimbalzo */
+  }
+  
+} 

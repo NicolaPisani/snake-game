@@ -165,17 +165,28 @@ const Game = () => {
   };
 
   return (
-    <div className="game-container " tabIndex="0" style={{ outline: "none" }}>
-      {isPaused && <div className="paused-message"></div>}
-      {isGameOver && (
-        <div className="game-over">
-          <p style={{ color: "yellow", fontFamily: "Rubik Pixels" }}>
-            Game Over
-          </p>
-        </div>
-      )}
-      <Snake snakeDots={snakeDots} />
-      <Food foodDot={foodDot} />
+    <div className="game-wrapper">
+      <div className="instructions-container">
+        <p>Istruzioni:</p>
+        <br />
+        <p>Usa i tasti freccia per muovere il serpente</p>
+        <br />
+        <p>Premi la barra spaziatrice per mettere in pausa</p>
+      </div>
+
+      <div className="game-container " tabIndex="0" style={{ outline: "none" }}>
+        {isPaused && <div className="paused-message"></div>}
+        {isGameOver && (
+          <div className="game-over">
+            <p style={{ color: "yellow", fontFamily: "Rubik Pixels" }}>
+              Game Over
+            </p>
+          </div>
+        )}
+        <Snake snakeDots={snakeDots} />
+        <Food foodDot={foodDot} />
+      </div>
+      <div className="snake-emoji">🐍</div> {/* Aggiungi l'emoji 🐍 */}
     </div>
   );
 };
