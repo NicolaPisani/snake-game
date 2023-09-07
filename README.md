@@ -1,3 +1,3 @@
 Snake Game 🐍
 
-Click here to play a game ----> (snake-game🐍/dist/index.html)
+Click here to play a game ----> (https://github.com/NicolaPisani/snake-game)
